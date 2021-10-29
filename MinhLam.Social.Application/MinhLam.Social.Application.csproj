@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A26156E1-743B-4239-AF6F-270083C4CCAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MinhLam.Social.Application</RootNamespace>
+    <AssemblyName>MinhLam.Social.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.90\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IRedirector.cs" />
+    <Compile Include="Memberships\AccountService.cs" />
+    <Compile Include="Memberships\GetCurrentTermReadModel.cs" />
+    <Compile Include="Memberships\IMembershipProfileQuery.cs" />
+    <Compile Include="Memberships\GetMembershipCurrentProfileReadModel.cs" />
+    <Compile Include="Memberships\MembershipProfileQuery.cs" />
+    <Compile Include="Profiles\AccountQuery.cs" />
+    <Compile Include="Profiles\CreateNewPrivacyFlagCommand.cs" />
+    <Compile Include="Profiles\CropAvatarFileCommand.cs" />
+    <Compile Include="Profiles\GetCurrentAccountReadModel.cs" />
+    <Compile Include="Profiles\GetCurrentProfileReadModel.cs" />
+    <Compile Include="Profiles\GetLevelOfExperienceTypeListReadModel.cs" />
+    <Compile Include="Memberships\IAccountService.cs" />
+    <Compile Include="Memberships\ITermQuery.cs" />
+    <Compile Include="Memberships\LoginCommand.cs" />
+    <Compile Include="Memberships\MembershipAppExceptionCodes.cs" />
+    <Compile Include="Memberships\RecoverPasswordCommand.cs" />
+    <Compile Include="Memberships\RegisterCommand.cs" />
+    <Compile Include="Memberships\TermQuery.cs" />
+    <Compile Include="Memberships\UpdateAccountCommand.cs" />
+    <Compile Include="Memberships\VerifyEmailCommand.cs" />
+    <Compile Include="Profiles\GetPrivacyFlagListReadModel.cs" />
+    <Compile Include="Profiles\GetPrivacyFlagTypeListReadModel.cs" />
+    <Compile Include="Profiles\GetProfileAttributeTypeReadModel.cs" />
+    <Compile Include="Profiles\GetVisibilityListReadModel.cs" />
+    <Compile Include="Profiles\IAccountQuery.cs" />
+    <Compile Include="Profiles\ILevelOfExperienceTypeQuery.cs" />
+    <Compile Include="Profiles\InputProfileAttribute.cs" />
+    <Compile Include="Profiles\IPrivacyFlagQuery.cs" />
+    <Compile Include="Profiles\IPrivacyFlagTypeQuery.cs" />
+    <Compile Include="Profiles\IProfileAttributeTypeQuery.cs" />
+    <Compile Include="Profiles\IProfileQuery.cs" />
+    <Compile Include="Profiles\IProfileService.cs" />
+    <Compile Include="Profiles\IVisibilityQuery.cs" />
+    <Compile Include="Profiles\LevelOfExperienceTypeQuery.cs" />
+    <Compile Include="Profiles\PrivacyFlagQuery.cs" />
+    <Compile Include="Profiles\PrivacyFlagTypeQuery.cs" />
+    <Compile Include="Profiles\ProfileAppExceptionCodes.cs" />
+    <Compile Include="Profiles\ProfileAttributeTypeQuery.cs" />
+    <Compile Include="Profiles\ProfileQuery.cs" />
+    <Compile Include="Profiles\ProfileService.cs" />
+    <Compile Include="Profiles\CreateNewProfileCommand.cs" />
+    <Compile Include="Profiles\SetUseGravatarCommand.cs" />
+    <Compile Include="Profiles\UpdatePrivacyFlagCommand.cs" />
+    <Compile Include="Profiles\UpdateProfileCommand.cs" />
+    <Compile Include="Profiles\UploadAvatarCommand.cs" />
+    <Compile Include="Profiles\VisibilityQuery.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MinhLam.Framework\MinhLam.Framework.csproj">
+      <Project>{779975fb-05d6-4886-a7c3-27d36f77d0be}</Project>
+      <Name>MinhLam.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MinhLam.Social.Domain\MinhLam.Social.Domain.csproj">
+      <Project>{8dbda940-2fa4-4be9-998a-fd6849686958}</Project>
+      <Name>MinhLam.Social.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
